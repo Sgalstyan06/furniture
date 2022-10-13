@@ -5,7 +5,11 @@ import Search from "../Search/Search";
 import * as Styled from "./Header.styles";
 
 const producdAssortment = [
-  { name: "кухня", top: "5px", products: ["table", "chair", "capboard"] },
+  {
+    name: "Барние Стойки",
+    top: "5px",
+    products: ["table", "chair", "capboard"],
+  },
   { name: "спалня", top: "30px", products: ["bad", "mirrow", "carpet"] },
 ];
 

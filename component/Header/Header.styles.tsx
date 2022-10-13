@@ -57,7 +57,6 @@ export const Contact = styled.div`
   height: 25px;
   &:hover {
     opacity: 0.8;
-    border-bottom: 3px solid green;
   }
   transition: 0.5s;
   @media screen and (max-width: 1050px) {
@@ -71,6 +70,11 @@ export const Products = styled(Contact)`
   position: relative;
   &:hover > ul {
     display: block;
+  }
+  @media screen and (max-width: 768px) {
+    &:hover > ul {
+      display: none;
+    }
   }
 `;
 export const About = styled(Contact)``;
