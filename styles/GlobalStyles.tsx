@@ -21,10 +21,9 @@ const GlobalStyles = createGlobalStyle`
 }
 
 html,
-body {
+body,ul,li {
   padding: 0;
-  margin: 0;  
-  background: gray;  
+  margin: 0;   
   font-family: 'Open Sans';
 }
 
