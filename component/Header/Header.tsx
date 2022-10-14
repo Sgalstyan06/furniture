@@ -7,10 +7,13 @@ import * as Styled from "./Header.styles";
 const producdAssortment = [
   {
     name: "Барние Стойки",
-    top: "5px",
-    products: ["table", "chair", "capboard"],
+    // top: "5px",
+    // products: ["table", "chair", "capboard"],
   },
-  { name: "спалня", top: "30px", products: ["bad", "mirrow", "carpet"] },
+  {
+    name: "спалня",
+    //  top: "30px", products: ["bad", "mirrow", "carpet"]
+  },
 ];
 
 const Header = () => {
@@ -34,7 +37,7 @@ const Header = () => {
                 return (
                   <Styled.ProductAssortiment key={i}>
                     {item.name}
-                    {item?.products && (
+                    {/* {item?.products && (
                       <Styled.ProductList top={item.top}>
                         {item.products.map((product, i) => {
                           return (
@@ -42,7 +45,7 @@ const Header = () => {
                           );
                         })}
                       </Styled.ProductList>
-                    )}
+                    )} */}
                   </Styled.ProductAssortiment>
                 );
               })}
