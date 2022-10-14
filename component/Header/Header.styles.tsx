@@ -55,6 +55,7 @@ export const Contact = styled.div`
   background: gray;
   line-height: 1.15;
   height: 25px;
+  z-index: 2;
   &:hover {
     opacity: 0.8;
   }
@@ -68,6 +69,7 @@ export const Contact = styled.div`
 `;
 export const Products = styled(Contact)`
   position: relative;
+  z-index: 2;
   &:hover > ul {
     display: block;
   }
