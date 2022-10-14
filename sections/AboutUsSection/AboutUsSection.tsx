@@ -5,7 +5,7 @@ import * as Styled from "./AboutUsSection.styles";
 const AboutUsSection = () => {
   return (
     <Styled.Container>
-      <Styled.Title>О Armen нас</Styled.Title>
+      <Styled.Title>О нас</Styled.Title>
       <Styled.About>
         <Styled.ImageWrapper>
           <Image
