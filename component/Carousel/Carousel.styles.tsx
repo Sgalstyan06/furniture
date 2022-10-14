@@ -9,7 +9,7 @@ export const Embla = styled.div`
   position: relative;
   background-color: #f7f7f7;
   width: 100%;
-  height: calc(100vh - 160px);
+  height: calc(100vh - 165px);
   margin-left: auto;
   margin-right: auto;
 `;

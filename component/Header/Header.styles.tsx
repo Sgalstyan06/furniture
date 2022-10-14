@@ -8,6 +8,13 @@ interface IProducts {
   isOpen: boolean;
 }
 
+export const MainContainer = styled.div`
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: white;
+`;
+
 export const HamburgerLogoWrapper = styled.div`
   display: flex;
   justify-content: space-between;

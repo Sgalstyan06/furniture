@@ -1,5 +1,6 @@
 import React from "react";
 import Carousel from "../../component/Carousel/Carousel";
+import * as Styled from "./HeroSection.styles";
 
 const heroImageList: string[] = [
   "/hero/hero_1.jpg",
@@ -11,8 +12,13 @@ const SLIDE_COUNT = 4;
 const slides = Array.from(Array(SLIDE_COUNT).keys());
 export const HeroSection = () => {
   return (
-    <>
-      <Carousel slides={heroImageList} />
-    </>
+    <Styled.Container>
+      <Carousel
+        slides={heroImageList}
+        options={{
+          loop: false,
+        }}
+      />
+    </Styled.Container>
   );
 };

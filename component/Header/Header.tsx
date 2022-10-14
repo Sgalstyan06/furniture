@@ -16,7 +16,7 @@ const producdAssortment = [
 const Header = () => {
   const [openHamburger, setOpenHamburger] = useState<boolean>(false);
   return (
-    <>
+    <Styled.MainContainer>
       <Styled.HamburgerLogoWrapper>
         <Image src="/logo.png" width="100px" height="100px" alt="logo" />
         <Styled.HamburgerWrapper
@@ -53,7 +53,7 @@ const Header = () => {
         </Styled.LinkWrapper>
         <Search />
       </Styled.Header>
-    </>
+    </Styled.MainContainer>
   );
 };
 

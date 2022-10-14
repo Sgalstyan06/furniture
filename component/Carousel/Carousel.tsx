@@ -14,7 +14,7 @@ interface ICarousel {
   options: Options;
 }
 
-const EmblaCarousel: React.FC<ICarousel> = ({
+const Carousel: React.FC<ICarousel> = ({
   slides,
   options = { loop: false },
 }) => {
@@ -79,4 +79,4 @@ const EmblaCarousel: React.FC<ICarousel> = ({
   );
 };
 
-export default EmblaCarousel;
+export default Carousel;
