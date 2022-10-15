@@ -4,7 +4,7 @@ import * as Styled from "./AboutUsSection.styles";
 
 const AboutUsSection = () => {
   return (
-    <Styled.Container>
+    <Styled.Container id="aboutUs">
       <Styled.Title>О нас</Styled.Title>
       <Styled.About>
         <Styled.ImageWrapper>
