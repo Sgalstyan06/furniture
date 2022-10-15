@@ -4,26 +4,26 @@ import { PrevButton, NextButton } from "./CarouselButton";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import * as Styled from "./Carousel.styles";
+import { height } from "@mui/system";
 
 type Options = {
   loop: boolean;
 };
 
 interface ICarousel {
+  delay: number;
   slides: string[];
   options: Options;
+  buttons: boolean;
 }
 
 const Carousel: React.FC<ICarousel> = ({
+  delay,
   slides,
   options = { loop: false },
+  buttons,
 }) => {
-  const autoplay = useRef(
-    Autoplay(
-      { delay: 4000, stopOnInteraction: false },
-      // (emblaRoot) => emblaRoot.parentElement,
-    ),
-  );
+  const autoplay = useRef(Autoplay({ delay, stopOnInteraction: false }));
 
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [autoplay.current]);
   const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
@@ -52,7 +52,6 @@ const Carousel: React.FC<ICarousel> = ({
     onSelect();
     emblaApi.on("select", onSelect);
   }, [emblaApi, onSelect]);
-
   return (
     <Styled.Embla>
       <Styled.EmblaViewport ref={emblaRef}>
@@ -73,8 +72,13 @@ const Carousel: React.FC<ICarousel> = ({
           ))}
         </Styled.EmblaContainer>
       </Styled.EmblaViewport>
-      <PrevButton onClick={scrollPrev} enabled={prevBtnEnabled} />
-      <NextButton onClick={scrollNext} enabled={nextBtnEnabled} />
+      {buttons && (
+        <>
+          {" "}
+          <PrevButton onClick={scrollPrev} enabled={prevBtnEnabled} />
+          <NextButton onClick={scrollNext} enabled={nextBtnEnabled} />
+        </>
+      )}
     </Styled.Embla>
   );
 };

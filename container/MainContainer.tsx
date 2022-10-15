@@ -5,6 +5,7 @@ import AboutUsSection from "../sections/AboutUsSection/AboutUsSection";
 import FooterSection from "../sections/Footer/FooterSection";
 import { HeroSection } from "../sections/HeroSection/HeroSection";
 import Products from "../sections/Products/Products";
+import ServiceSection from "../sections/ServiceSection/ServiceSection";
 import * as Styled from "./MainContainer.styles";
 
 const MainContainer = () => {
@@ -14,6 +15,7 @@ const MainContainer = () => {
       <HeroSection />
       <AboutUsSection />
       <Products />
+      <ServiceSection />
       <FooterSection />
     </Styled.MainContainer>
   );

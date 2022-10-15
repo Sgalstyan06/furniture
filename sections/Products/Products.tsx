@@ -67,9 +67,8 @@ const productList: IProduct[] = [
 
 const Products = () => {
   return (
-    <Styled.Container>
+    <Styled.Container id="products">
       <Styled.Title>ПРОДУКТЫ</Styled.Title>
-
       <Product productList={productList} />
     </Styled.Container>
   );

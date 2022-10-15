@@ -14,10 +14,12 @@ export const HeroSection = () => {
   return (
     <Styled.Container>
       <Carousel
+        delay={4000}
         slides={heroImageList}
         options={{
           loop: false,
         }}
+        buttons={true}
       />
     </Styled.Container>
   );
