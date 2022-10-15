@@ -37,7 +37,7 @@ const Footer = () => {
             height="20px"
             alt="email"
           />{" "}
-          <a href="mailto:karen@mail.ru">karen@mail.ru</a>
+          <a href="mailto:karen@mail.ru">karenask@mail.ru</a>
         </Styled.ContactInfoItem>
         <Styled.ContactInfoItem>
           <Image
@@ -46,7 +46,7 @@ const Footer = () => {
             height="20px"
             alt="phone"
           />{" "}
-          <a href="tel:+9142222222">+9142222222</a>
+          <a href="tel:0079257342623">0079257342623</a>
         </Styled.ContactInfoItem>
       </Styled.ContactInfo>
     </Styled.Container>
