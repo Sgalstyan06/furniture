@@ -21,6 +21,7 @@ export const CarouselDescriptionWrapper = styled.div`
   gap: 20px;
   @media screen and (max-width: 680px) {
     grid-template-columns: 1fr;
+    grid-template-rows: 320px;
   }
 `;
 

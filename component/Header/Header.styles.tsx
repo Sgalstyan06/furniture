@@ -15,6 +15,12 @@ export const MainContainer = styled.div`
   background: white;
 `;
 
+export const LogoWrapper = styled.div`
+  position: relative;
+  width: 100%;
+  height: 160px;
+`;
+
 export const HamburgerLogoWrapper = styled.div`
   display: flex;
   justify-content: space-between;
@@ -22,15 +28,16 @@ export const HamburgerLogoWrapper = styled.div`
 export const HamburgerWrapper = styled.div`
   display: none;
   @media screen and (max-width: 768px) {
-    display: block;
+    display: grid;
+    justify-content: flex-end;
+    padding-left: 20px;
   }
 `;
 export const Header = styled.div<IProducts>`
-  background: ${prop("theme.color.searchBackgroundColor")};
-  height: 60px;
+  // background: ${prop("theme.color.searchBackgroundColor")};
+  height: 40px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
   padding: 0 20px;
   color: white;
   @media screen and (min-width: 1050px) {
@@ -38,6 +45,7 @@ export const Header = styled.div<IProducts>`
   }
   @media screen and (max-width: 768px) {
     justify-content: center;
+    height: auto;
   }
 `;
 export const LinkWrapper = styled.div<IProducts>`

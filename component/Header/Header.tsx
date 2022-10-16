@@ -19,12 +19,19 @@ const Header = () => {
   return (
     <Styled.MainContainer id="header">
       <Styled.HamburgerLogoWrapper>
-        <Image src="/logo.png" width="100px" height="100px" alt="logo" />
-        <Styled.HamburgerWrapper
-          onClick={() => setOpenHamburger((prev) => !prev)}
-        >
-          <Hamburger />
-        </Styled.HamburgerWrapper>
+        <Styled.LogoWrapper>
+          <Image
+            src="/mebelarmpro.png"
+            layout="fill"
+            objectFit="cover"
+            alt="logo"
+          />
+          <Styled.HamburgerWrapper
+            onClick={() => setOpenHamburger((prev) => !prev)}
+          >
+            <Hamburger />
+          </Styled.HamburgerWrapper>
+        </Styled.LogoWrapper>
       </Styled.HamburgerLogoWrapper>
       <Styled.Header isOpen={openHamburger}>
         <Styled.LinkWrapper isOpen={openHamburger}>
@@ -46,7 +53,7 @@ const Header = () => {
             <Link href="#aboutUs">о нас</Link>
           </Styled.About>
         </Styled.LinkWrapper>
-        <Search />
+        {/* <Search /> */}
       </Styled.Header>
     </Styled.MainContainer>
   );
