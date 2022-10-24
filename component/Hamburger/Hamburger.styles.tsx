@@ -18,11 +18,12 @@ export const HamburgerLine = styled.div<IHmaburgerLineProps>`
   top: 0;
   left: 0;
   background: black;
+  transition: all 0.5s ease-in-out;
   ${(props) => (props.isOpen ? "top: 9px; transform: rotate(45deg);" : "")}
 `;
 export const Line1 = styled(HamburgerLine)`
   top: 9px;
-  ${(props) => (props.isOpen ? "display:none;" : "")}
+  ${(props) => (props.isOpen ? "transform: translateX(-50px);height: 0;" : "")}
 `;
 export const Line2 = styled(HamburgerLine)`
   top: 17px;

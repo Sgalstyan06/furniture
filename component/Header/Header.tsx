@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import Hamburger from "../Hamburger/Hambrger";
-import Search from "../Search/Search";
 import * as Styled from "./Header.styles";
 
 const producdAssortment = [
@@ -16,28 +15,34 @@ const producdAssortment = [
 
 const Header = () => {
   const [openHamburger, setOpenHamburger] = useState<boolean>(false);
+  const [changeStatusHamburgerButton, setChangeStatusHamburgerButton] =
+    useState(false);
+  function hamburgerButtonChange() {
+    setOpenHamburger((prev) => !prev);
+    setChangeStatusHamburgerButton((prev) => !prev);
+  }
   return (
     <Styled.MainContainer id="header">
-      <Styled.HamburgerLogoWrapper>
-        <Styled.LogoWrapper>
-          <Image
-            src="/mebelarmpro.png"
-            layout="fill"
-            objectFit="cover"
-            alt="logo"
+      <Styled.LogoWrapper>
+        <Image
+          src="/mebelarmpro.png"
+          layout="fill"
+          objectFit="cover"
+          alt="logo"
+        />
+        <Styled.HamburgerWrapper
+          onClick={() => setOpenHamburger((prev) => !prev)}
+        >
+          <Hamburger
+            changeStatusHamburgerButton={changeStatusHamburgerButton}
           />
-          <Styled.HamburgerWrapper
-            onClick={() => setOpenHamburger((prev) => !prev)}
-          >
-            <Hamburger />
-          </Styled.HamburgerWrapper>
-        </Styled.LogoWrapper>
-      </Styled.HamburgerLogoWrapper>
-      <Styled.Header isOpen={openHamburger}>
+        </Styled.HamburgerWrapper>
+      </Styled.LogoWrapper>
+      <Styled.Header>
         <Styled.LinkWrapper isOpen={openHamburger}>
-          <Styled.Products>
+          <Styled.Products onClick={hamburgerButtonChange}>
             <Link href="#products">продукты</Link>
-            <Styled.ListAssortimantProducts className="main-list-product">
+            <Styled.ListAssortimantProducts>
               {producdAssortment.map((item, i) => {
                 return (
                   <Styled.ProductAssortiment key={i}>
@@ -47,13 +52,20 @@ const Header = () => {
               })}
             </Styled.ListAssortimantProducts>
           </Styled.Products>
-          <Styled.Contact> контакты</Styled.Contact>
-          <Styled.About>
+          <Styled.LinkItem onClick={hamburgerButtonChange}>
+            {" "}
+            контакты
+          </Styled.LinkItem>
+          <Styled.LinkItem onClick={hamburgerButtonChange}>
             {" "}
             <Link href="#aboutUs">о нас</Link>
-          </Styled.About>
+          </Styled.LinkItem>
+          <Link href="#service">
+            <Styled.LinkItem onClick={hamburgerButtonChange}>
+              Наши Услуги
+            </Styled.LinkItem>
+          </Link>
         </Styled.LinkWrapper>
-        {/* <Search /> */}
       </Styled.Header>
     </Styled.MainContainer>
   );

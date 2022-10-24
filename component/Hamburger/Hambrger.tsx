@@ -1,8 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import * as Styled from "./Hamburger.styles";
 
-const Hamburger = () => {
+interface IHamburger {
+  changeStatusHamburgerButton: boolean;
+}
+
+const Hamburger: React.FC<IHamburger> = ({ changeStatusHamburgerButton }) => {
   const [openhamburger, setOpenHamburger] = useState<boolean>(false);
+  useEffect(() => {
+    setOpenHamburger(false);
+  }, [changeStatusHamburgerButton]);
 
   return (
     <Styled.Hamburger onClick={() => setOpenHamburger((prev) => !prev)}>

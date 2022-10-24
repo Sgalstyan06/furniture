@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { prop } from "styled-tools";
+import { prop, ifProp } from "styled-tools";
 
 interface IProductList {
   top: string;
@@ -20,11 +20,6 @@ export const LogoWrapper = styled.div`
   width: 100%;
   height: 160px;
 `;
-
-export const HamburgerLogoWrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
-`;
 export const HamburgerWrapper = styled.div`
   display: none;
   @media screen and (max-width: 768px) {
@@ -33,11 +28,12 @@ export const HamburgerWrapper = styled.div`
     padding-left: 20px;
   }
 `;
-export const Header = styled.div<IProducts>`
-  // background: ${prop("theme.color.searchBackgroundColor")};
+export const Header = styled.div`
+  // background: #d3d3d3;
   height: 40px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 0 20px;
   color: white;
   @media screen and (min-width: 1050px) {
@@ -48,21 +44,27 @@ export const Header = styled.div<IProducts>`
     height: auto;
   }
 `;
+
 export const LinkWrapper = styled.div<IProducts>`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   align-items: center;
   @media screen and (max-width: 768px) {
-    display: ${(props) => (props.isOpen ? "grid" : "none")};
+    ${(props) =>
+      props.isOpen
+        ? "transform: translateX(40%); -webkit-transform: translateX(40%);"
+        : "transform: translateX(100%); -webkit-transform: translateX(100%);"};
+    display: block;
     width: 100%;
-    position: absolute;
+    height: calc(100vh - 160px);
+    background: white;
+    position: fixed;
     top: 160px;
-    grid-template-columns: 1fr;
-    justify-items: center;
+    transition: all 0.5s ease-in-out;
   }
 `;
-export const Contact = styled.div`
+export const LinkItem = styled.div`
   width: 150px;
   text-align: center;
   font-size: 18px;
@@ -79,10 +81,11 @@ export const Contact = styled.div`
     width: 120px;
   }
   @media screen and (max-width: 768px) {
-    width: 200px;
+    width: 120px;
+    margin: 20px;
   }
 `;
-export const Products = styled(Contact)`
+export const Products = styled(LinkItem)`
   position: relative;
   z-index: 2;
   &:hover > ul {
@@ -94,7 +97,6 @@ export const Products = styled(Contact)`
     }
   }
 `;
-export const About = styled(Contact)``;
 export const ListAssortimantProducts = styled.ul`
   color: black;
   display: none;
