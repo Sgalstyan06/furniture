@@ -6,8 +6,13 @@ const Footer = () => {
   return (
     <Styled.Container>
       <Styled.Company>
-        <Image src={`/logo.png`} width="50px" height="50px" alt="logo" />
-        <Styled.Title>MEBELARMPRO</Styled.Title>
+        <Image
+          src={`/mebelarmpro.png`}
+          width="120px"
+          height="60px"
+          alt="logo"
+          quality={100}
+        />
         <Styled.Description>Лючшая Компония В Росии</Styled.Description>
       </Styled.Company>
       <Styled.Browse>

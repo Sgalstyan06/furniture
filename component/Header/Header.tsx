@@ -26,8 +26,10 @@ const Header = () => {
       <Styled.LogoWrapper>
         <Image
           src="/mebelarmpro.png"
-          layout="fill"
-          objectFit="cover"
+          // layout="fill"
+          // objectFit="cover"
+          width="120px"
+          height="60px"
           alt="logo"
         />
         <Styled.HamburgerWrapper
