@@ -4,12 +4,30 @@ import React, { useState } from "react";
 import Hamburger from "../Hamburger/Hambrger";
 import * as Styled from "./Header.styles";
 
-const producdAssortment = [
+const menuItems = [
   {
-    name: "Барние Стойки",
+    content: "Продукты",
+    path: "#products",
+    width: "80px",
+    left: "11px",
   },
   {
-    name: "спалня",
+    content: "Контакты",
+    path: "",
+    width: "80px",
+    left: "11px",
+  },
+  {
+    content: "О Нас",
+    path: "#aboutUs",
+    width: "55px",
+    left: "24px",
+  },
+  {
+    content: "Наши Услуги",
+    path: "#service",
+    width: "110px",
+    left: "-3px",
   },
 ];
 
@@ -24,51 +42,40 @@ const Header = () => {
   return (
     <Styled.MainContainer id="header">
       <Styled.LogoWrapper>
-        <Image
-          src="/mebelarmpro.png"
-          // layout="fill"
-          // objectFit="cover"
-          width="120px"
-          height="60px"
-          alt="logo"
-        />
-        <Styled.HamburgerWrapper
-          onClick={() => setOpenHamburger((prev) => !prev)}
-        >
-          <Hamburger
-            changeStatusHamburgerButton={changeStatusHamburgerButton}
-          />
-        </Styled.HamburgerWrapper>
+        <Image src="/mebelarmpro.png" width="120px" height="60px" alt="logo" />
       </Styled.LogoWrapper>
+
+      <Styled.HamburgerWrapper
+        onClick={() => setOpenHamburger((prev) => !prev)}
+      >
+        <Hamburger changeStatusHamburgerButton={changeStatusHamburgerButton} />
+      </Styled.HamburgerWrapper>
       <Styled.Header>
         <Styled.LinkWrapper isOpen={openHamburger}>
-          <Styled.Products onClick={hamburgerButtonChange}>
-            <Link href="#products">продукты</Link>
-            <Styled.ListAssortimantProducts>
-              {producdAssortment.map((item, i) => {
-                return (
-                  <Styled.ProductAssortiment key={i}>
-                    {item.name}
-                  </Styled.ProductAssortiment>
-                );
-              })}
-            </Styled.ListAssortimantProducts>
-          </Styled.Products>
-          <Styled.LinkItem onClick={hamburgerButtonChange}>
-            {" "}
-            контакты
-          </Styled.LinkItem>
-          <Styled.LinkItem onClick={hamburgerButtonChange}>
-            {" "}
-            <Link href="#aboutUs">о нас</Link>
-          </Styled.LinkItem>
-          <Link href="#service">
-            <Styled.LinkItem onClick={hamburgerButtonChange}>
-              Наши Услуги
-            </Styled.LinkItem>
-          </Link>
+          {menuItems.map((item, i) => {
+            return (
+              <Link key={i} href={item.path}>
+                <Styled.LinkItem
+                  left={item.left}
+                  size={item.width}
+                  onClick={hamburgerButtonChange}
+                >
+                  {item.content}
+                </Styled.LinkItem>
+              </Link>
+            );
+          })}
         </Styled.LinkWrapper>
       </Styled.Header>
+      <Styled.ContactInfo>
+        +914777777
+        <Image
+          src="/icons/telegram.png"
+          width="25px"
+          height="25px"
+          alt="telegram"
+        />
+      </Styled.ContactInfo>
     </Styled.MainContainer>
   );
 };

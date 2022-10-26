@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { prop, ifProp } from "styled-tools";
+import { prop } from "styled-tools";
 
 interface IProductList {
   top: string;
@@ -8,28 +8,36 @@ interface IProducts {
   isOpen: boolean;
 }
 
+interface ISize {
+  size: string;
+  left: string;
+}
+
 export const MainContainer = styled.div`
   position: sticky;
   top: 0;
   z-index: 5;
   background: white;
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  align-items: center;
 `;
 
 export const LogoWrapper = styled.div`
   position: relative;
   width: 100%;
-  height: 160px;
+  height: 70px;
 `;
 export const HamburgerWrapper = styled.div`
   display: none;
   @media screen and (max-width: 768px) {
+    cursor: pointer;
     display: grid;
     justify-content: flex-end;
     padding-left: 20px;
   }
 `;
 export const Header = styled.div`
-  // background: #d3d3d3;
   height: 40px;
   display: flex;
   justify-content: space-between;
@@ -40,15 +48,13 @@ export const Header = styled.div`
     padding-left: 100px;
   }
   @media screen and (max-width: 768px) {
-    justify-content: center;
     height: auto;
   }
 `;
 
 export const LinkWrapper = styled.div<IProducts>`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
   align-items: center;
   @media screen and (max-width: 768px) {
     ${(props) =>
@@ -56,44 +62,48 @@ export const LinkWrapper = styled.div<IProducts>`
         ? "transform: translateX(40%); -webkit-transform: translateX(40%);"
         : "transform: translateX(100%); -webkit-transform: translateX(100%);"};
     display: block;
+    padding: 20px;
     width: 100%;
     height: calc(100vh - 160px);
     background: white;
     position: fixed;
-    top: 160px;
+    top: 70px;
     transition: all 0.5s ease-in-out;
   }
 `;
-export const LinkItem = styled.div`
-  width: 150px;
+export const LinkItem = styled.div<ISize>`
+  position: relative;
   text-align: center;
   font-size: 18px;
   border-radius: 2px;
-  background: gray;
+  color: black;
   line-height: 1.15;
   height: 25px;
   z-index: 2;
+  cursor: pointer;
+  opacity: 0.8;
+  &: after {
+    content: "";
+    position: absolute;
+    background: black;
+    height: 2px;
+    width: 0px;
+    left: ${prop("left")};
+    bottom: -5px;
+    transition: all 0.5s;
+  }
+  &:hover&:after {
+    width: ${prop("size")};
+  }
   &:hover {
-    opacity: 0.8;
+    opacity: 1;
   }
-  transition: 0.5s;
-  @media screen and (max-width: 1050px) {
-    width: 120px;
-  }
+
   @media screen and (max-width: 768px) {
-    width: 120px;
-    margin: 20px;
-  }
-`;
-export const Products = styled(LinkItem)`
-  position: relative;
-  z-index: 2;
-  &:hover > ul {
-    display: block;
-  }
-  @media screen and (max-width: 768px) {
-    &:hover > ul {
-      display: none;
+    text-align: start;
+    margin-top: 10px;
+    &:after {
+      left: 0;
     }
   }
 `;
@@ -151,5 +161,19 @@ export const Product = styled.li`
   }
   @media screen and (max-width: 768px) {
     width: 200px;
+  }
+`;
+
+export const ContactInfo = styled.div`
+  position: absolute;
+  top: 10px;
+  right: 50px;
+  display: grid;
+  justify-items: start;
+  @media screen and (max-width: 768px) {
+    right: 40%;
+  }
+  @media screen and (max-width: 480px) {
+    right: 30%;
   }
 `;
