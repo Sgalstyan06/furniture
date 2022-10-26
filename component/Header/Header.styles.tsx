@@ -74,7 +74,11 @@ export const LinkWrapper = styled.div<IProducts>`
 export const LinkItem = styled.div<ISize>`
   position: relative;
   text-align: center;
-  font-size: 18px;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  word-spacing: 5px;
   border-radius: 2px;
   color: black;
   line-height: 1.15;
@@ -82,6 +86,7 @@ export const LinkItem = styled.div<ISize>`
   z-index: 2;
   cursor: pointer;
   opacity: 0.8;
+
   &: after {
     content: "";
     position: absolute;
@@ -166,14 +171,37 @@ export const Product = styled.li`
 
 export const ContactInfo = styled.div`
   position: absolute;
-  top: 10px;
+  top: 18px;
   right: 50px;
   display: grid;
+  grid-template-columns: 1fr 30px;
   justify-items: start;
+  align-items: center;
+  gap: 5px;
+  a {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    opacity: 0.8;
+    transition: all 0.5s ease-in-out;
+    &:hover {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+  }
+  img {
+    transition: all 0.5s ease-in-out;
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
   @media screen and (max-width: 768px) {
-    right: 40%;
+    right: auto;
+    left: 40%;
   }
-  @media screen and (max-width: 480px) {
-    right: 30%;
-  }
+`;
+
+export const TelegramWrapper = styled.div`
+  cursor: pointer;
+  height: 25px;
 `;

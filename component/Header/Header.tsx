@@ -8,25 +8,19 @@ const menuItems = [
   {
     content: "Продукты",
     path: "#products",
-    width: "80px",
-    left: "11px",
-  },
-  {
-    content: "Контакты",
-    path: "",
-    width: "80px",
-    left: "11px",
+    width: "92px",
+    left: "15px",
   },
   {
     content: "О Нас",
     path: "#aboutUs",
-    width: "55px",
-    left: "24px",
+    width: "60px",
+    left: "30px",
   },
   {
     content: "Наши Услуги",
     path: "#service",
-    width: "110px",
+    width: "126px",
     left: "-3px",
   },
 ];
@@ -68,13 +62,17 @@ const Header = () => {
         </Styled.LinkWrapper>
       </Styled.Header>
       <Styled.ContactInfo>
-        +914777777
-        <Image
-          src="/icons/telegram.png"
-          width="25px"
-          height="25px"
-          alt="telegram"
-        />
+        <a href="tel:0079257342623">0079257342623</a>
+        <Styled.TelegramWrapper>
+          <Link href="https://t.me/mebel_armpro">
+            <Image
+              src="/icons/telegram.png"
+              width="25px"
+              height="25px"
+              alt="telegram"
+            />
+          </Link>
+        </Styled.TelegramWrapper>
       </Styled.ContactInfo>
     </Styled.MainContainer>
   );

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { prop } from "styled-tools";
 
 export const Container = styled.div`
   padding: 60px 0;
@@ -15,15 +16,15 @@ export const Container = styled.div`
 `;
 export const Company = styled.div``;
 export const Title = styled.h1`
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 1.2;
+  font-size: ${prop("theme.fontSize.sm")};
+  font-weight: ${prop("theme.fontWeight.md")};
+  line-height: ${prop("theme.lineHeight")};
   margin-bottom: 10px;
 `;
 export const Description = styled.h2`
-  font-size: 12px;
-  font-weight: 300;
-  line-height: 1.2;
+  font-size: ${prop("theme.fontSize.xs")};
+  font-weight: ${prop("theme.fontWeight.xs")};
+  line-height: ${prop("theme.lineHeight")};
 `;
 export const Browse = styled.div``;
 
@@ -31,9 +32,9 @@ export const ContactInfo = styled.div``;
 
 export const ContactInfoItem = styled.div`
   margin-bottom: 3px;
-  font-size: 12px;
-  font-weight: 300;
-  line-height: 1.2;
+  font-size: ${prop("theme.fontSize.xs")};
+  font-weight: ${prop("theme.fontWeight.xs")};
+  line-height: ${prop("theme.lineHeight")};
   display: flex;
   align-items: center;
   gap: 10px;

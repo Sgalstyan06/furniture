@@ -10,7 +10,7 @@ const AboutUsSection = () => {
         <Styled.ImageWrapper>
           <Image
             src="/about/about.jpg"
-            width={300}
+            width={327}
             height={300}
             // layout="responsive"
             // objectFit="cover"
