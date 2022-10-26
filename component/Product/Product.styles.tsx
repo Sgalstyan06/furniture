@@ -26,10 +26,9 @@ export const Description = styled.h2`
 `;
 
 export const ImageWrapper = styled.div`
-  //   max-width: 240px;
   margin: 5px auto 0;
   &:hover {
-    transform: scale(1.5);
+    transform: scale(1.2);
   }
-  transition: 2s ease-out;
+  transition: 2s ease-in-out;
 `;

@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   padding: 60px 0;
-  color: gray;
+  color: white;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-items: center;
@@ -37,4 +37,8 @@ export const ContactInfoItem = styled.div`
   display: flex;
   align-items: center;
   gap: 10px;
+`;
+export const LogoWrapper = styled.div`
+  width: 120px;
+  height: 60px;
 `;
