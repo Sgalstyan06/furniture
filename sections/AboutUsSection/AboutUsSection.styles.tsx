@@ -8,6 +8,11 @@ export const About = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
+  @media screen and (max-width: 768px) {
+    grid-template-columns: 1fr;
+    max-width: 327px;
+    margin: auto;
+  }
 `;
 export const Title = styled.h1`
   font-size: 34px;
