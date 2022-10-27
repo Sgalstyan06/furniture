@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { prop } from "styled-tools";
 
 export const Container = styled.div`
   display: grid;
@@ -11,18 +12,24 @@ export const Card = styled.div`
   padding: 20px;
 `;
 export const Title = styled.h1`
-  font-size: 24px;
-  font-weight: 600;
-  line-height: 1.15;
+  font-size: ${prop("theme.fontSize.md")};
+  font-weight: ${prop("theme.fontWeight.lg")};
+  line-height: ${prop("theme.lineHeight")};
   text-align: center;
+  @media screen and (max-width: 768px) {
+    font-size: 20px;
+  }
 `;
 
 export const Description = styled.h2`
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 1.15;
+  font-size: ${prop("theme.fontSize.sm")};
+  font-weight: ${prop("theme.fontWeight.md")};
+  line-height: ${prop("theme.lineHeight")};
   text-align: center;
   margin-top: 10px;
+  @media screen and (max-width: 768px) {
+    font-size: 16px;
+  }
 `;
 
 export const ImageWrapper = styled.div`

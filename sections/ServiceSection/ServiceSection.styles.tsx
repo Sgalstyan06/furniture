@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { prop } from "styled-tools";
 
 interface ISubDescription {
   readMore: boolean;
@@ -10,13 +11,22 @@ export const Container = styled.div`
 `;
 export const Title = styled.h1`
   text-align: center;
+  font-size: ${prop("theme.fontSize.xl")};
+  font-weight: ${prop("theme.fontWeight.xl")};
+  line-height: ${prop("theme.lineHeight")};
+  @media screen and (max-width: 768px) {
+    font-size: ${prop("theme.fontSize.lg")};
+  }
 `;
 export const Subtitle = styled.h2`
-  font-size: 22px;
-  font-weight: 500;
-  line-height: 1.2;
-  margin: 20px 0;
+  font-size: ${prop("theme.fontSize.md")};
+  font-weight: ${prop("theme.fontWeight.md")};
+  line-height: ${prop("theme.lineHeight")};
+  margin-bottom: 10px;
   text-align: center;
+  @media screen and (max-width: 768px) {
+    font-size: 20px;
+  }
 `;
 
 export const CarouselDescriptionWrapper = styled.div`
@@ -30,18 +40,20 @@ export const CarouselDescriptionWrapper = styled.div`
 `;
 
 export const Description = styled.h2`
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 1.25;
+  font-size: ${prop("theme.fontSize.sm")};
+  font-weight: ${prop("theme.fontWeight.sm")};
+  line-height: ${prop("theme.lineHeight")};
+  @media screen and (max-width: 768px) {
+    font-size: 16px;
+  }
 `;
 
 export const ReadMore = styled.button`
   display: inline;
   text-align: start;
   border: none;
-  font-weight: 600;
+  font-weight: ${prop("theme.fontWeight.lg")};
   color: gray;
-
   background: white;
   &: hover {
     color: black;
@@ -52,9 +64,9 @@ export const ServiceDescriptions = styled.div<ISubDescription>`
 `;
 export const ServiceDescription = styled.div`
   h1 {
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 1.25;
+    font-size: ${prop("theme.fontSize.sm")};
+    font-weight: ${prop("theme.fontWeight.md")};
+    line-height: ${prop("theme.lineHeight")};
     text-align: start;
     margin: 10px;
   }

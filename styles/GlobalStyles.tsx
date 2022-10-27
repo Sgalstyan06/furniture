@@ -26,7 +26,7 @@ body,ul,li {
   margin: 0;   
   font-family: 'Open Sans';
   scroll-behavior: smooth !important;
-  scroll-padding: 150px;
+  scroll-padding: 70px;
 }
 
 a {
